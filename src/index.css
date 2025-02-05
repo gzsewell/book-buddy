@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;700&display=swap");
 body {
   font-family: Georgia, serif;
   background-color: #f8f8f8;
@@ -17,5 +18,32 @@ a {
   font-size: 1.1rem;
   padding: 10px 15px;
 }
-
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.book-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: #f9f9f9; */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 220px;
+  /* background: #f4d35e; */
+  border: 2px solid #ee964b;
+  border-radius: 8px;
+  font-family: "Fredoka", sans-serif;
+}
+.book-list,
+p {
+  margin: 5px 0;
+  font-size: 16px;
+  text-align: center;
+}
 /* Add your own custom styles here */
