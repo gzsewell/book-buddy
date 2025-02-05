@@ -9,5 +9,13 @@ body {
   width: 30px;
   margin-right: 10px;
 }
+.navbar,
+a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+}
 
 /* Add your own custom styles here */

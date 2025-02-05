@@ -5,12 +5,15 @@ import Account from "./components/Account";
 import Books from "./components/Books";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Navigations from "./components/Navigations";
+import "./index.css";
 
 function App() {
   const [token, setToken] = useState(null);
 
   return (
     <>
+      <Navigations />
       <Routes>
         <Route path="/account" element={<Account />} />
         <Route path="/books" element={<Books />} />
