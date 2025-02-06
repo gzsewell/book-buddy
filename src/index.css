@@ -46,4 +46,64 @@ p {
   font-size: 16px;
   text-align: center;
 }
+.form-container {
+  max-width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  padding-bottom: 5px;
+}
+.form-container h3 {
+  padding-bottom: 5px;
+}
+.form-container label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border 0.3s ease-in-out;
+}
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #f4d35e;
+  outline: none;
+}
+.form-container button {
+  width: 100%;
+  background: #f4d35e;
+  border: none;
+  padding: 10px;
+  color: #333;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+  background: #ee964b;
+}
+
+@media (max-width: 500px) {
+  .form-container {
+    width: 90%;
+  }
+}
 /* Add your own custom styles here */

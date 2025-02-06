@@ -15,13 +15,6 @@ function App() {
   return (
     <>
       <Navigations />
-      <Routes>
-        <Route path="/account" element={<Account />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/books/details/:id" element={<SingleBook />} />
-        <Route path="/login_page" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
       <h1>
         <img id="logo-image" src={bookLogo} />
         Library App
@@ -42,6 +35,13 @@ function App() {
         Don't forget to set up React Router to navigate between the different
         views of your single page application!
       </p>
+      <Routes>
+        <Route path="/account" element={<Account />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/details/:id" element={<SingleBook />} />
+        <Route path="/login_page" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 }
