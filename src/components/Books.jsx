@@ -3,6 +3,7 @@ Fetch the book data from the provided API.
 Users should be able to click on an individual book to navigate to the SingleBook component and view its details. */
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Books() {
@@ -25,17 +26,21 @@ function Books() {
 }
 function Bookcard({ book }) {
   return (
-    <div className="book-list">
-      <img
-        src={book.coverimage}
-        alt={book.title}
-        style={{ width: "200px", height: "auto" }}
-      />
-      <p>{book.title}</p>
-      <p>{book.author}</p>
-      <p>{book.description}</p>
-      <p>{book.available}</p>
-    </div>
+    <>
+      <Link to={`/books/details/${book.id}`}>
+        <div className="book-list">
+          <img
+            src={book.coverimage}
+            alt={book.title}
+            style={{ width: "200px", height: "auto" }}
+          />
+          <p>{book.title}</p>
+          <p>{book.author}</p>
+          <p>{book.description}</p>
+          <p>{book.available}</p>
+        </div>
+      </Link>
+    </>
   );
 }
 
