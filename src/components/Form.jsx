@@ -5,7 +5,7 @@ import axios from "axios";
 function Form({ parent, submitFunction }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
+    firstname: "",
     lastname: "",
     password: "",
     "confirmed-passord": "",
@@ -18,7 +18,7 @@ function Form({ parent, submitFunction }) {
     e.preventDefault();
     console.log("subbmitting data...");
     console.log(formData);
-    const endPoint = parent ? "registern" : "login";
+    const endPoint = parent ? "register" : "login";
     try {
       const data = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}users/${endPoint}`,
@@ -39,24 +39,28 @@ function Form({ parent, submitFunction }) {
   };
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <label>
-        <h3>Username</h3>
-        <input
-          type="text"
-          name="username"
-          onChange={handleInput}
-          value={formData?.username}
-        ></input>
-      </label>
-      <label>
-        <h3>Last Name</h3>
-        <input
-          type="text"
-          name="lastname"
-          onChange={handleInput}
-          value={formData?.lastname}
-        ></input>
-      </label>
+      {parent && (
+        <label>
+          <h3>First Name</h3>
+          <input
+            type="text"
+            name="firstname"
+            onChange={handleInput}
+            value={formData?.firstname}
+          ></input>
+        </label>
+      )}
+      {parent && (
+        <label>
+          <h3>Last Name</h3>
+          <input
+            type="text"
+            name="lastname"
+            onChange={handleInput}
+            value={formData?.lastname}
+          ></input>
+        </label>
+      )}
 
       <label>
         <h3>Email</h3>

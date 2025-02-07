@@ -5,7 +5,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.default-text {
+  text-align: left;
+}
 #logo-image {
   width: 30px;
   margin-right: 10px;
@@ -72,7 +74,7 @@ p {
 
 .form-container input,
 .form-container textarea {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;

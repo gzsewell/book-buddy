@@ -37,7 +37,7 @@ function Bookcard({ book }) {
           <p>{book.title}</p>
           <p>{book.author}</p>
           <p>{book.description}</p>
-          <p>{book.available}</p>
+          <p>{book.available ? "Available" : "Unavailable"}</p>
         </div>
       </Link>
     </>

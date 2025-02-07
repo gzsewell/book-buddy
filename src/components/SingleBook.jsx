@@ -28,8 +28,9 @@ function SingleBook() {
       />
       <h3>{displayedBook?.title}</h3>
       <p>{displayedBook?.author}</p>
-      <p>{displayedBook?.available}</p>
+      <p>{displayedBook?.available ? "Available" : "Unavailable"}</p>
       <p>{displayedBook?.description}</p>
+      <button>Check Out Book</button>
     </div>
   );
 }
