@@ -39,8 +39,8 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/books" element={<Books />} />
         <Route path="/books/details/:id" element={<SingleBook />} />
-        <Route path="/login_page" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login_page" element={<Login />} />
       </Routes>
     </>
   );

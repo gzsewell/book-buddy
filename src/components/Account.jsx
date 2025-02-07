@@ -3,9 +3,16 @@ Fetch the account data from the provided API. You may consider conditionally ren
  that prompts them to log in or create an account.  */
 
 import React from "react";
+import axios from "axios";
 
 function Account() {
-  return <div>Account</div>;
+  // try {
+  //   const results = axios.get(`${import.meta.env.VITE_BASE_URL}users/me`, {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   });
+  // } catch (err) {}
+  return <div>Welcome To Your Account Page</div>;
 }
+// console.log(results);
 
 export default Account;
