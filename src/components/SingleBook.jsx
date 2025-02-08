@@ -8,16 +8,26 @@ function SingleBook() {
   const { id } = useParams();
   const navigate = useNavigate;
   const [displayedBook, setDisplayedbook] = useState([]);
+  const url = `${import.meta.env.VITE_API_BASE_URL}/books/${id}`;
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_BASE_URL}/books/${id}`)
+      .get(url)
       .then((results) => {
-        console.log(results.data.book);
         setDisplayedbook(results.data.book);
       })
       .catch((err) => console.error(err));
   }, []);
+
+  async function handleClick() {
+    const token = localStorage.getItem("token");
+    const res = await axios.patch(
+      url,
+      { available: false },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    console.log(res);
+  }
 
   return (
     <div className="book-list">
@@ -30,7 +40,9 @@ function SingleBook() {
       <p>{displayedBook?.author}</p>
       <p>{displayedBook?.available ? "Available" : "Unavailable"}</p>
       <p>{displayedBook?.description}</p>
-      <button>Check Out Book</button>
+      {displayedBook?.available && (
+        <button onClick={handleClick}>Check Out Book</button>
+      )}
     </div>
   );
 }

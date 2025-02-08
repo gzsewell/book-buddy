@@ -16,8 +16,6 @@ function Form({ parent, submitFunction }) {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("subbmitting data...");
-    console.log(formData);
     const endPoint = parent ? "register" : "login";
     try {
       const data = await axios.post(
@@ -29,7 +27,6 @@ function Form({ parent, submitFunction }) {
           password: formData.password,
         }
       );
-      console.log(data);
       if (data.status === 200) {
         localStorage.setItem("token", data.data.token);
         navigate("/account");
